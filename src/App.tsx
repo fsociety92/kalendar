@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Calendar } from './components/Calendar/Calendar';
+import './static/css/global.css';
+import { createYear } from './utilis/helpers/date/createYear';
+import './src/utils/helpers/date/createDate';
+import { createDate } from './utilis/helpers/date/createDate';
+import { createMonth } from './utilis/helpers/date/createMonth';
+import './utilis/helpers/date/createMonth';
+import { getMonthesNames } from './utilis/helpers/date/getMonthesNames';
+// import {selectDate, selectedDate} from './components/Calendar/hooks/Calendar'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+// console.log ('createDate', getMonthesNames());
+
+
+
+    // console.log('createDate', createMonth({locale: 'ru-RU'}));
+      // console.log(createMonth({}).createMonthDays());
+       // console.log('createDate', createMonth({locale: 'ru-RU'}));
+
+
+
+       
+
+    export const App: React.FC = () => {
+     const [selectDate, selectedDate] = React.useState(new Date());
+
+
+return (
+    <div className='app_container'>
+      <Calendar selectDate = {selectDate}  selectedDate = {selectedDate} />
     </div>
+    
+    
+    
+    
   );
-}
+     } ;
 
-export default App;
+ export default App;
